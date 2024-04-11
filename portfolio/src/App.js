@@ -1,20 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Index from './portfolio';
 import Notfound from './portfolio/notfound';
 
-
-
 function App() {
   return (
-    <>
-      <Router>
-        <div>
-          <Route exact path="/" component={Index} />
-          <Route component={Notfound} />
-        </div>
-      </Router>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="*" element={<Notfound />} />
+      </Routes>
+    </Router>
   );
 }
 
